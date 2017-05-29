@@ -11,6 +11,13 @@ Mercure point of sale
 - prix
 - ico (nom du fichier icone du produit)
 - type
+    * 1 : Snacks
+    * 2 : Boissons
+    * 10 : Sandwich (unique)
+    * 20 : Impressions
+    * 30 : Goodies
+    * 40 : Adhésion (unique)
+
 
 ##### Stocks
 - **idStock**
