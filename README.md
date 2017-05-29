@@ -42,6 +42,16 @@ Mercure point of sale
 - prenom
 - email
 - statut
+    * L1
+    * L2M
+    * L3M
+    * M1M
+    * M2M
+    * L2I
+    * L3I
+    * M1I
+    * M2I
+    * AUTRE
 
 #### Utilisateurs
 - **idUtilisateur**
