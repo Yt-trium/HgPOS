@@ -69,12 +69,31 @@ void MainWindow::updatePB(int type)
 
 void MainWindow::updatePanier()
 {
+    float t = 0;
     int i;
 
     ui->LWPanier->clear();
 
     for(i=0;i<panier->prod.size();i++)
     {
-        ui->LWPanier->addItem(panier->prod.at(i).nom);
+        QListWidgetItem* itm = new QListWidgetItem(QString::number(panier->unit.at(i)) + " " +
+                                                   panier->prod.at(i).nom + " (" +
+                                                   QString::number(panier->prod.at(i).prix*panier->unit.at(i)) +
+                                                   QChar(8364) + ")");
+        switch(panier->prod.at(i).type)
+        {
+            case 1:
+                itm->setBackgroundColor(QColor(255,255,200));
+            break;
+            case 2:
+                itm->setBackgroundColor(QColor(200,255,255));
+            break;
+        }
+
+        t += panier->prod.at(i).prix*panier->unit.at(i);
+
+        ui->LWPanier->addItem(itm);
     }
+
+    ui->statusBar->showMessage("Total : " + QString::number(t) + QChar(8364));
 }
