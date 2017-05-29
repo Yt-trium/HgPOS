@@ -39,4 +39,5 @@ FORMS    += mainwindow.ui \
     dialogs/dialoginscription.ui
 
 DISTFILES += \
-    README.md
+    README.md \
+    doc/hgpos

@@ -1,0 +1,87 @@
+Mercure point of sale
+
+\section*{Base de données}
+
+\subsubsection*{Tables concernant la vente et la gestion des stocks}
+
+\subparagraph*{Produits}
+
+
+\begin{DoxyItemize}
+\item {\bfseries id\+Produit}
+\item nom
+\item prix
+\item ico (nom du fichier icone du produit)
+\item type
+\begin{DoxyItemize}
+\item 1 \+: Snacks
+\item 2 \+: Boissons
+\item 10 \+: Sandwich (unique)
+\item 20 \+: Impressions
+\item 30 \+: Goodies
+\item 40 \+: Adhésion (unique)
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subparagraph*{Stocks}
+
+
+\begin{DoxyItemize}
+\item {\bfseries id\+Stock}
+\item {\itshape id\+Produit} (Produits)
+\item unite (unites actuels en stock)
+\end{DoxyItemize}
+
+\subparagraph*{Ventes}
+
+
+\begin{DoxyItemize}
+\item {\bfseries id\+Vente}
+\item {\itshape id\+Produit} (Produits)
+\item unite (unites vendues)
+\end{DoxyItemize}
+
+\subparagraph*{Formules}
+
+
+\begin{DoxyItemize}
+\item {\bfseries id\+Formule}
+\item {\itshape id\+Produit\+Sandwich} (Produits)
+\item {\itshape id\+Produit\+Snack} (Produits)
+\item {\itshape id\+Produit\+Boisson} (Produits)
+\end{DoxyItemize}
+
+\subsubsection*{Autres tables}
+
+\paragraph*{Membres}
+
+
+\begin{DoxyItemize}
+\item {\bfseries id\+Membre}
+\item nom
+\item prenom
+\item email
+\item statut
+\begin{DoxyItemize}
+\item L1
+\item L2M
+\item L3M
+\item M1M
+\item M2M
+\item L2I
+\item L3I
+\item M1I
+\item M2I
+\item A\+U\+T\+RE
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\paragraph*{Utilisateurs}
+
+
+\begin{DoxyItemize}
+\item {\bfseries id\+Utilisateur}
+\item nom
+\item mdp
+\item droits 
+\end{DoxyItemize}
