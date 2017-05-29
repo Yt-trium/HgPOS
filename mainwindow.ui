@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>HgPOS</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="4" colspan="2">
+     <widget class="QPushButton" name="PBModifierQuantite">
+      <property name="text">
+       <string>Modifier Quantité</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="8">
+     <widget class="QListWidget" name="LWPanier"/>
+    </item>
+    <item row="3" column="6" colspan="2">
+     <widget class="QPushButton" name="PBValider">
+      <property name="text">
+       <string>Valider</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="8">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QPushButton" name="PBViderPanier">
+      <property name="text">
+       <string>Vider Panier</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2" colspan="2">
+     <widget class="QPushButton" name="PBSupprimerElement">
+      <property name="text">
+       <string>Supprimer Element</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="8">
+     <layout class="QGridLayout" name="GLProduits"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionInscriptions"/>
+   <addaction name="actionRechercheMembre"/>
+   <addaction name="separator"/>
+   <addaction name="actionSandwichs"/>
+   <addaction name="separator"/>
+   <addaction name="actionAnnales"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="categoriesToolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSnacks"/>
+   <addaction name="actionBoissons"/>
+   <addaction name="actionImpressions"/>
+   <addaction name="actionGoodies"/>
+  </widget>
+  <action name="actionSnacks">
+   <property name="icon">
+    <iconset>
+     <normaloff>data/menu_ico/snacks.png</normaloff>data/menu_ico/snacks.png</iconset>
+   </property>
+   <property name="text">
+    <string>Snacks</string>
+   </property>
+   <property name="toolTip">
+    <string>Snacks</string>
+   </property>
+  </action>
+  <action name="actionBoissons">
+   <property name="icon">
+    <iconset>
+     <normaloff>data/menu_ico/boissons.png</normaloff>data/menu_ico/boissons.png</iconset>
+   </property>
+   <property name="text">
+    <string>Boissons</string>
+   </property>
+  </action>
+  <action name="actionSandwichs">
+   <property name="icon">
+    <iconset>
+     <normaloff>data/menu_ico/sandwichs.png</normaloff>data/menu_ico/sandwichs.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sandwichs</string>
+   </property>
+  </action>
+  <action name="actionImpressions">
+   <property name="icon">
+    <iconset>
+     <normaloff>data/menu_ico/impressions.png</normaloff>data/menu_ico/impressions.png</iconset>
+   </property>
+   <property name="text">
+    <string>Impressions</string>
+   </property>
+  </action>
+  <action name="actionInscriptions">
+   <property name="icon">
+    <iconset>
+     <normaloff>data/menu_ico/inscriptions.png</normaloff>data/menu_ico/inscriptions.png</iconset>
+   </property>
+   <property name="text">
+    <string>Inscriptions</string>
+   </property>
+  </action>
+  <action name="actionRechercheMembre">
+   <property name="icon">
+    <iconset>
+     <normaloff>data/menu_ico/rechercheMembre.png</normaloff>data/menu_ico/rechercheMembre.png</iconset>
+   </property>
+   <property name="text">
+    <string>Recherche Membre</string>
+   </property>
+  </action>
+  <action name="actionGoodies">
+   <property name="icon">
+    <iconset>
+     <normaloff>data/menu_ico/goodies.png</normaloff>data/menu_ico/goodies.png</iconset>
+   </property>
+   <property name="text">
+    <string>Goodies</string>
+   </property>
+  </action>
+  <action name="actionAnnales">
+   <property name="icon">
+    <iconset>
+     <normaloff>data/menu_ico/annales.png</normaloff>data/menu_ico/annales.png</iconset>
+   </property>
+   <property name="text">
+    <string>Annales</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

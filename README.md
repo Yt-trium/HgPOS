@@ -18,7 +18,6 @@ Mercure point of sale
     * 30 : Goodies
     * 40 : Adhésion (unique)
 
-
 ##### Stocks
 - **idStock**
 - _idProduit_ (Produits)
