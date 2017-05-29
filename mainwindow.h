@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QSignalMapper>
 
+#include "dialogs/dialoginscription.h"
 #include "databasemanager.h"
 #include "produit.h"
 #include "panier.h"
@@ -78,6 +79,7 @@ private slots:
     void on_actionImpressions_triggered();
 
     void venteBtn_clicked(int idProduit);
+    void on_actionInscriptions_triggered();
 };
 
 #endif // MAINWINDOW_H

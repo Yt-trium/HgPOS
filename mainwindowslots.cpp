@@ -42,3 +42,9 @@ void MainWindow::venteBtn_clicked(int idProduit)
         qDebug() << "MainWindow::on_venteBtn_clicked : idProduit doesn't match";
     updatePanier();
 }
+
+void MainWindow::on_actionInscriptions_triggered()
+{
+    DialogInscription *di = new DialogInscription();
+    di->show();
+}
