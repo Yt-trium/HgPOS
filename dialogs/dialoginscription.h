@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+#include "databasemanager.h"
+
 namespace Ui {
 class DialogInscription;
 }
@@ -16,10 +18,15 @@ class DialogInscription : public QDialog
 
 public:
     explicit DialogInscription(QWidget *parent = 0);
+    void setDB(DatabaseManager *dbm);
     ~DialogInscription();
+
+private slots:
+    void accept();
 
 private:
     Ui::DialogInscription *ui;
+    DatabaseManager *db;
 };
 
 #endif // DIALOGINSCRIPTION_H

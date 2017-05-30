@@ -16,7 +16,7 @@ DatabaseManager::~DatabaseManager()
 
 QList<Produit> *DatabaseManager::getProduitList()
 {
-    QList<Produit>* listProduits = new QList<Produit>;
+    listProduits = new QList<Produit>;
 
     if(!dbConnection.open())
     {
@@ -44,7 +44,7 @@ QList<Produit> *DatabaseManager::getProduitList()
     return listProduits;
 }
 
-int DatabaseManager::sell(Panier *p)
+int DatabaseManager::sellPanier(Panier *p)
 {
     int i;
 
@@ -59,9 +59,31 @@ int DatabaseManager::sell(Panier *p)
         QString q = "INSERT INTO `Ventes` VALUES (NULL,'" +
                     QString::number(p->prod.at(i).idProduit) + "','" +
                     QString::number(p->unit.at(i)) + "',CURRENT_TIMESTAMP)";
-        qDebug() << q;
         QSqlQuery query(q);
     }
+
+    return 0;
+}
+
+int DatabaseManager::sell(int p, unsigned int u)
+{
+    QString q = "INSERT INTO `Ventes` VALUES (NULL,'" +
+                QString::number(listProduits->at(p-1).idProduit) + "','" +
+                QString::number(u) + "',CURRENT_TIMESTAMP)";
+    QSqlQuery query(q);
+}
+
+int DatabaseManager::insertMembre(QString nom, QString prenom, QString email, QString statut)
+{
+    if(!dbConnection.open())
+    {
+        qDebug()<<"DataBase::getProduitList : database not open";
+        return 1;
+    }
+
+    QString q = "INSERT INTO `Membres` VALUES (NULL,'" + nom +
+                "','" + prenom + "','" + email + "','" + statut + "')";
+    QSqlQuery query(q);
 
     return 0;
 }

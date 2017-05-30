@@ -21,7 +21,7 @@ void MainWindow::on_PBModifierQuantite_clicked()
 
 void MainWindow::on_PBValider_clicked()
 {
-    db->sell(panier);
+    db->sellPanier(panier);
     panier->clear();
     updatePanier();
 }
@@ -67,5 +67,6 @@ void MainWindow::venteBtn_clicked(int idProduit)
 void MainWindow::on_actionInscriptions_triggered()
 {
     DialogInscription *di = new DialogInscription();
+    di->setDB(db);
     di->show();
 }
