@@ -6,6 +6,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 
+#include "panier.h"
 #include "produit.h"
 
 /**
@@ -31,6 +32,13 @@ public:
      * @return liste des produits (icon chargés)
      */
     QList<Produit>* getProduitList();
+
+    /**
+     * @brief Ajouts les produits dans le panier a la liste des éléments vendus.
+     * @param p le panier
+     * @return 0 si pas d'erreur
+     */
+    int sell(Panier *p);
 
 private:
     /**

@@ -21,7 +21,8 @@ void MainWindow::on_PBModifierQuantite_clicked()
 
 void MainWindow::on_PBValider_clicked()
 {
-
+    db->sell(panier);
+    panier->clear();
     updatePanier();
 }
 

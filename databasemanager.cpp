@@ -43,3 +43,25 @@ QList<Produit> *DatabaseManager::getProduitList()
 
     return listProduits;
 }
+
+int DatabaseManager::sell(Panier *p)
+{
+    int i;
+
+    if(!dbConnection.open())
+    {
+        qDebug()<<"DataBase::getProduitList : database not open";
+        return 1;
+    }
+
+    for(i=0;i<p->prod.size();i++)
+    {
+        QString q = "INSERT INTO `Ventes` VALUES (NULL,'" +
+                    QString::number(p->prod.at(i).idProduit) + "','" +
+                    QString::number(p->unit.at(i)) + "',CURRENT_TIMESTAMP)";
+        qDebug() << q;
+        QSqlQuery query(q);
+    }
+
+    return 0;
+}
