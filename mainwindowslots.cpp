@@ -6,9 +6,29 @@ void MainWindow::on_PBViderPanier_clicked()
     updatePanier();
 }
 
+void MainWindow::on_PBSupprimerElement_clicked()
+{
+    panier->prod.removeAt(getPanierCurrentRow());
+    panier->unit.removeAt(getPanierCurrentRow());
+    updatePanier();
+}
+
+void MainWindow::on_PBModifierQuantite_clicked()
+{
+    updatePanierUnit(getPanierCurrentRow());
+    updatePanier();
+}
+
 void MainWindow::on_PBValider_clicked()
 {
 
+    updatePanier();
+}
+
+void MainWindow::on_LWPanier_doubleClicked()
+{
+    updatePanierUnit(getPanierCurrentRow());
+    updatePanier();
 }
 
 void MainWindow::on_actionSnacks_triggered()

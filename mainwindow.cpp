@@ -12,6 +12,9 @@ MainWindow::MainWindow(QWidget *parent) :
     loadListPushButton();
     panier = new Panier();
 
+    QShortcut* del_shortcut = new QShortcut(QKeySequence(Qt::Key_Delete), ui->LWPanier);
+    connect(del_shortcut, SIGNAL(activated()), this, SLOT(on_PBSupprimerElement_clicked()));
+
     updatePB(1);
 }
 
@@ -43,6 +46,8 @@ int MainWindow::loadListPushButton()
         mapper.setMapping(btn, listProduits->at(i).idProduit);
     }
     connect(&mapper, SIGNAL(mapped(int)), this, SLOT(venteBtn_clicked(int)));
+
+    return 0;
 }
 
 void MainWindow::updatePB(int type)
@@ -94,6 +99,18 @@ void MainWindow::updatePanier()
 
         ui->LWPanier->addItem(itm);
     }
-
+    ui->LWPanier->setCurrentRow(ui->LWPanier->count()-1);
     ui->statusBar->showMessage("Total : " + QString::number(t) + QChar(8364));
+}
+
+int MainWindow::getPanierCurrentRow()
+{
+    return ui->LWPanier->currentRow();
+}
+
+void MainWindow::updatePanierUnit(int r)
+{
+    bool validReturn;
+    int u = QInputDialog::getInt(this,"Unite","Unite :",1,0,1000,1,&validReturn);
+    panier->unit.replace(r,u);
 }

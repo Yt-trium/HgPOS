@@ -5,6 +5,8 @@
 
 #include <QPushButton>
 #include <QSignalMapper>
+#include <QInputDialog>
+#include <QShortcut>
 
 #include "dialogs/dialoginscription.h"
 #include "databasemanager.h"
@@ -49,6 +51,17 @@ private:
     void updatePanier();
 
     /**
+     * @brief retourne la ligne de l'élément actuellement selectionné
+     */
+    int getPanierCurrentRow();
+
+    /**
+     * @brief modifie le nombre d'unité d'un produit
+     * @param la ligne du produit
+     */
+    void updatePanierUnit(int r);
+
+    /**
      * @brief Objet d'accès à la base de données
      */
     DatabaseManager *db;
@@ -71,7 +84,11 @@ private:
 
 private slots:
     void on_PBViderPanier_clicked();
+    void on_PBSupprimerElement_clicked();
+    void on_PBModifierQuantite_clicked();
     void on_PBValider_clicked();
+
+    void on_LWPanier_doubleClicked();
 
     void on_actionSnacks_triggered();
     void on_actionBoissons_triggered();
