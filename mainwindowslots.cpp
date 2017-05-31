@@ -74,7 +74,15 @@ void MainWindow::on_actionInscriptions_triggered()
 
 void MainWindow::on_actionRechercheMembre_triggered()
 {
-    DialogRecherche *dr = new DialogRecherche;
+    DialogRecherche *dr = new DialogRecherche();
     dr->setDB(db);
     dr->show();
+}
+
+
+void MainWindow::on_actionSandwichs_triggered()
+{
+    DialogSandwichs *ds = new DialogSandwichs();
+    ds->setDB(db);
+    ds->show();
 }

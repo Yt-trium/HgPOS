@@ -28,18 +28,21 @@ SOURCES += main.cpp\
     dialogs/dialoginscription.cpp \
     databasemanager.cpp \
     mainwindowslots.cpp \
-    dialogs/dialogrecherche.cpp
+    dialogs/dialogrecherche.cpp \
+    dialogs/dialogsandwichs.cpp
 
 HEADERS  += mainwindow.h \
     dialogs/dialoginscription.h \
     databasemanager.h \
     produit.h \
     panier.h \
-    dialogs/dialogrecherche.h
+    dialogs/dialogrecherche.h \
+    dialogs/dialogsandwichs.h
 
 FORMS    += mainwindow.ui \
     dialogs/dialoginscription.ui \
-    dialogs/dialogrecherche.ui
+    dialogs/dialogrecherche.ui \
+    dialogs/dialogsandwichs.ui
 
 DISTFILES += \
     README.md \
