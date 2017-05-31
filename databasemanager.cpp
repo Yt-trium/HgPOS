@@ -44,6 +44,41 @@ QList<Produit> *DatabaseManager::getProduitList()
     return listProduits;
 }
 
+QList<QString> *DatabaseManager::searchMember(QString nom, QString prenom)
+{
+    QList<QString>* r = new QList<QString>;
+
+    if(!dbConnection.open())
+    {
+        qDebug()<<"DataBase::searchMember : database not open";
+        return r;
+    }
+
+    QString q;
+
+    if(nom.isEmpty() && prenom.isEmpty())
+        return r;
+    else if(nom.isEmpty())
+        q = "SELECT * FROM Membres WHERE UPPER(prenom) = UPPER('" + prenom + "')";
+    else if(prenom.isEmpty())
+        q = "SELECT * FROM Membres WHERE UPPER(nom) = UPPER('" + nom + "')";
+    else
+        q = "SELECT * FROM Membres WHERE UPPER(nom) = UPPER('" + nom + "') AND UPPER(prenom) = UPPER('" + prenom +"')";
+
+    qDebug() << q;
+    QSqlQuery query(q);
+
+    while (query.next())
+    {
+        qDebug() << query.value(0);
+        r->append(QString("(" + query.value(0).toString() + ") " + query.value(1).toString()) + " "
+                  + query.value(2).toString() + " " + query.value(3).toString() + " "
+                  + query.value(4).toString());
+    }
+
+    return r;
+}
+
 int DatabaseManager::sellPanier(Panier *p)
 {
     int i;

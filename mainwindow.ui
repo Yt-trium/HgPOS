@@ -181,6 +181,13 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>LWPanier</tabstop>
+  <tabstop>PBViderPanier</tabstop>
+  <tabstop>PBSupprimerElement</tabstop>
+  <tabstop>PBModifierQuantite</tabstop>
+  <tabstop>PBValider</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

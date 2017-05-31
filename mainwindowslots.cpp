@@ -70,3 +70,11 @@ void MainWindow::on_actionInscriptions_triggered()
     di->setDB(db);
     di->show();
 }
+
+
+void MainWindow::on_actionRechercheMembre_triggered()
+{
+    DialogRecherche *dr = new DialogRecherche;
+    dr->setDB(db);
+    dr->show();
+}

@@ -34,6 +34,12 @@ public:
     QList<Produit>* getProduitList();
 
     /**
+     * @brief Recherche un membre avec son nom et son prénom
+     * @return La liste des résultats
+     */
+    QList<QString>* searchMember(QString nom, QString prenom);
+
+    /**
      * @brief Ajouts les produits dans le panier a la liste des éléments vendus.
      * @param p le panier
      * @return 0 si pas d'erreur

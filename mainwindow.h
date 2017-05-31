@@ -9,6 +9,7 @@
 #include <QShortcut>
 
 #include "dialogs/dialoginscription.h"
+#include "dialogs/dialogrecherche.h"
 #include "databasemanager.h"
 #include "produit.h"
 #include "panier.h"
@@ -96,7 +97,9 @@ private slots:
     void on_actionImpressions_triggered();
 
     void venteBtn_clicked(int idProduit);
+
     void on_actionInscriptions_triggered();
+    void on_actionRechercheMembre_triggered();
 };
 
 #endif // MAINWINDOW_H

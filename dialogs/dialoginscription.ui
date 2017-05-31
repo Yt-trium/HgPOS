@@ -11,9 +11,12 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Inscription</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="LENom"/>
+   </item>
    <item row="0" column="0">
     <widget class="QLabel" name="LNom">
      <property name="text">
@@ -21,8 +24,12 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
-    <widget class="QLineEdit" name="LEEmail"/>
+   <item row="3" column="0">
+    <widget class="QLabel" name="LStatut">
+     <property name="text">
+      <string>Statu</string>
+     </property>
+    </widget>
    </item>
    <item row="5" column="0" colspan="2">
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -33,6 +40,19 @@
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="LEPrenom"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="LEmail">
+     <property name="text">
+      <string>Email</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="LEEmail"/>
    </item>
    <item row="4" column="0" colspan="2">
     <spacer name="verticalSpacer">
@@ -46,12 +66,6 @@
       </size>
      </property>
     </spacer>
-   </item>
-   <item row="0" column="1">
-    <widget class="QLineEdit" name="LENom"/>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLineEdit" name="LEPrenom"/>
    </item>
    <item row="3" column="1">
     <widget class="QComboBox" name="CBStatu">
@@ -114,22 +128,14 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="LEmail">
-     <property name="text">
-      <string>Email</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="LStatut">
-     <property name="text">
-      <string>Statu</string>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>LENom</tabstop>
+  <tabstop>LEPrenom</tabstop>
+  <tabstop>LEEmail</tabstop>
+  <tabstop>CBStatu</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
