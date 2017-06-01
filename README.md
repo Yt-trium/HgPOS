@@ -17,6 +17,7 @@ Mercure point of sale
     * 20 : Impressions
     * 30 : Goodies
     * 40 : Adhésion (unique)
+    * 50 : Annales (unique)
 
 ##### Stocks
 - **idStock**

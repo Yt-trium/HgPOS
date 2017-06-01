@@ -11,6 +11,7 @@
 #include "dialogs/dialoginscription.h"
 #include "dialogs/dialogrecherche.h"
 #include "dialogs/dialogsandwichs.h"
+#include "dialogs/dialogannales.h"
 #include "databasemanager.h"
 #include "produit.h"
 #include "panier.h"
@@ -102,6 +103,7 @@ private slots:
     void on_actionInscriptions_triggered();
     void on_actionRechercheMembre_triggered();
     void on_actionSandwichs_triggered();
+    void on_actionAnnales_triggered();
 };
 
 #endif // MAINWINDOW_H

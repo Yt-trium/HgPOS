@@ -71,7 +71,6 @@ void MainWindow::on_actionInscriptions_triggered()
     di->show();
 }
 
-
 void MainWindow::on_actionRechercheMembre_triggered()
 {
     DialogRecherche *dr = new DialogRecherche();
@@ -79,10 +78,14 @@ void MainWindow::on_actionRechercheMembre_triggered()
     dr->show();
 }
 
-
 void MainWindow::on_actionSandwichs_triggered()
 {
-    DialogSandwichs *ds = new DialogSandwichs();
-    ds->setDB(db);
+    DialogSandwichs *ds = new DialogSandwichs(this,db);
     ds->show();
+}
+
+void MainWindow::on_actionAnnales_triggered()
+{
+    DialogAnnales *da = new DialogAnnales(this,db);
+    da->show();
 }

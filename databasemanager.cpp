@@ -7,6 +7,8 @@ DatabaseManager::DatabaseManager()
 
     if (!dbConnection.open())
         qDebug() << "Error: connection with database";
+
+    listProduits = NULL;
 }
 
 DatabaseManager::~DatabaseManager()
@@ -16,7 +18,10 @@ DatabaseManager::~DatabaseManager()
 
 QList<Produit> *DatabaseManager::getProduitList()
 {
-    listProduits = new QList<Produit>;
+    if(listProduits != NULL)
+        listProduits->clear();
+    else
+        listProduits = new QList<Produit>;
 
     if(!dbConnection.open())
     {
@@ -65,7 +70,6 @@ QList<QString> *DatabaseManager::searchMember(QString nom, QString prenom)
     else
         q = "SELECT * FROM Membres WHERE UPPER(nom) = UPPER('" + nom + "') AND UPPER(prenom) = UPPER('" + prenom +"')";
 
-    qDebug() << q;
     QSqlQuery query(q);
 
     while (query.next())

@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     databasemanager.cpp \
     mainwindowslots.cpp \
     dialogs/dialogrecherche.cpp \
-    dialogs/dialogsandwichs.cpp
+    dialogs/dialogsandwichs.cpp \
+    dialogs/dialogannales.cpp
 
 HEADERS  += mainwindow.h \
     dialogs/dialoginscription.h \
@@ -37,12 +38,14 @@ HEADERS  += mainwindow.h \
     produit.h \
     panier.h \
     dialogs/dialogrecherche.h \
-    dialogs/dialogsandwichs.h
+    dialogs/dialogsandwichs.h \
+    dialogs/dialogannales.h
 
 FORMS    += mainwindow.ui \
     dialogs/dialoginscription.ui \
     dialogs/dialogrecherche.ui \
-    dialogs/dialogsandwichs.ui
+    dialogs/dialogsandwichs.ui \
+    dialogs/dialogannales.ui
 
 DISTFILES += \
     README.md \

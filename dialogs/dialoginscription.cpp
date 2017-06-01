@@ -20,7 +20,10 @@ DialogInscription::~DialogInscription()
 
 void DialogInscription::accept()
 {
+    this->hide();
+
     db->insertMembre(ui->LEPrenom->text(),ui->LENom->text(),ui->LEEmail->text(),ui->CBStatu->currentText());
     db->sell(38,1);
-    this->hide();
+
+    QDialog::accept();
 }
